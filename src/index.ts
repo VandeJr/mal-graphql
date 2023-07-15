@@ -2,8 +2,9 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 
 import 'reflect-metadata'
-import express from 'express'
 import 'dotenv/config'
+import express from 'express'
+import cors from 'cors'
 import { createHandler } from 'graphql-http/lib/use/express'
 
 import schema from './schema'
@@ -14,6 +15,8 @@ async function main () {
   const port = process.env.PORT
 
   if (port == null) { throw new Error('PORT must be set') }
+
+  app.use(cors())
 
   app.all('/graphql', createHandler({ schema }))
 

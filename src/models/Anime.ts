@@ -2,206 +2,203 @@ import { ObjectType, Field } from 'type-graphql'
 
 @ObjectType()
 class Picture {
-  @Field()
-    medium!: string
+  @Field({ nullable: true })
+    medium?: string
 
-  @Field()
-    large!: string
+  @Field({ nullable: true })
+    large?: string
 }
 
 @ObjectType()
 class Node {
-  @Field()
-    id!: number
+  @Field({ nullable: true })
+    id?: number
 
-  @Field()
-    title!: string
+  @Field({ nullable: true })
+    title?: string
 
-  @Field(type => Picture)
-    main_picture!: Picture
+  @Field(type => Picture, { nullable: true })
+    main_picture?: Picture
 }
 
 @ObjectType()
 class Status {
-  @Field()
-    watching!: string
+  @Field({ nullable: true })
+    watching?: string
 
-  @Field()
-    completed!: string
+  @Field({ nullable: true })
+    completed?: string
 
-  @Field()
-    on_hold!: string
+  @Field({ nullable: true })
+    on_hold?: string
 
-  @Field()
-    dropped!: string
+  @Field({ nullable: true })
+    dropped?: string
 
-  @Field()
-    plan_to_watch!: string
+  @Field({ nullable: true })
+    plan_to_watch?: string
 }
 
 @ObjectType()
 class AlternativeTitles {
-  @Field(type => [String])
-    synonyms!: string[]
+  @Field(type => [String], { nullable: true })
+    synonyms?: string[]
 
-  @Field()
-    en!: string
+  @Field({ nullable: true })
+    en?: string
 
-  @Field()
-    ja!: string
+  @Field({ nullable: true })
+    ja?: string
 }
 
 @ObjectType()
 class Broadcast {
-  @Field()
-    day_of_the_week!: string
+  @Field({ nullable: true })
+    day_of_the_week?: string
 
-  @Field()
-    start_time!: string
+  @Field({ nullable: true })
+    start_time?: string
 }
 
 @ObjectType()
 class Genre {
-  @Field()
-    id!: number
+  @Field({ nullable: true })
+    id?: number
 
-  @Field()
-    name!: string
+  @Field({ nullable: true })
+    name?: string
 }
 
 @ObjectType()
 class Recommendation {
-  @Field(type => Node)
-    node!: Node
+  @Field(type => Node, { nullable: true })
+    node?: Node
 
-  @Field()
-    num_recommendations!: number
+  @Field({ nullable: true })
+    num_recommendations?: number
 }
 
 @ObjectType()
 class RelatedAnime {
-  @Field(type => Node)
-    node!: Node
+  @Field(type => Node, { nullable: true })
+    node?: Node
 
-  @Field()
-    relation_type!: string
+  @Field({ nullable: true })
+    relation_type?: string
 
-  @Field()
-    relation_type_formatted!: string
+  @Field({ nullable: true })
+    relation_type_formatted?: string
 }
 
 @ObjectType()
 class StartSeason {
-  @Field()
-    year!: number
+  @Field({ nullable: true })
+    year?: number
 
-  @Field()
-    season!: string
+  @Field({ nullable: true })
+    season?: string
 }
 
 @ObjectType()
 class Statistics {
-  @Field()
-    status!: Status
+  @Field({ nullable: true })
+    status?: Status
 
-  @Field()
-    num_list_users!: number
+  @Field({ nullable: true })
+    num_list_users?: number
 }
 
 @ObjectType()
 export class Anime {
-  @Field()
-    id!: number
+  @Field({ nullable: true })
+    id?: number
 
-  @Field()
-    title!: string
+  @Field({ nullable: true })
+    title?: string
 
-  @Field(type => Picture)
-    main_picture!: Picture
+  @Field(type => Picture, { nullable: true })
+    main_picture?: Picture
 
-  @Field(type => AlternativeTitles)
-    alternative_titles!: AlternativeTitles
+  @Field(type => AlternativeTitles, { nullable: true })
+    alternative_titles?: AlternativeTitles
 
-  @Field()
-    start_date!: Date
+  @Field({ nullable: true })
+    start_date?: Date
 
-  @Field()
-    end_date!: Date
+  @Field({ nullable: true })
+    end_date?: Date
 
-  @Field()
-    synopsis!: string
+  @Field({ nullable: true })
+    synopsis?: string
 
-  @Field()
-    mean!: number
+  @Field({ nullable: true })
+    mean?: number
 
-  @Field()
-    rank!: number
+  @Field({ nullable: true })
+    rank?: number
 
-  @Field()
-    popularity!: number
+  @Field({ nullable: true })
+    popularity?: number
 
-  @Field()
-    num_list_users!: number
+  @Field({ nullable: true })
+    num_list_users?: number
 
-  @Field()
-    num_scoring_users!: number
+  @Field({ nullable: true })
+    num_scoring_users?: number
 
-  @Field()
-    nsfw!: string
+  @Field({ nullable: true })
+    nsfw?: string
 
-  @Field()
-    created_at!: Date
+  @Field({ nullable: true })
+    created_at?: Date
 
-  @Field()
-    updated_at!: Date
+  @Field({ nullable: true })
+    updated_at?: Date
 
-  @Field()
-    media_type!: string
+  @Field({ nullable: true })
+    media_type?: string
 
-  @Field()
-    status!: string
+  @Field({ nullable: true })
+    status?: string
 
-  @Field(type => [Genre])
-    genres!: Genre[]
+  @Field(type => [Genre], { nullable: true })
+    genres?: Genre[]
 
-  @Field()
-    num_episodes!: number
+  @Field({ nullable: true })
+    num_episodes?: number
 
-  @Field(type => StartSeason)
-    start_season!: StartSeason
+  @Field(type => StartSeason, { nullable: true })
+    start_season?: StartSeason
 
-  @Field(type => Broadcast)
-    broadcast!: Broadcast
+  @Field(type => Broadcast, { nullable: true })
+    broadcast?: Broadcast
 
-  @Field()
-    source!: string
+  @Field({ nullable: true })
+    source?: string
 
-  @Field()
-    average_episode_duration!: number
+  @Field({ nullable: true })
+    average_episode_duration?: number
 
-  @Field()
-    rating!: string
+  @Field({ nullable: true })
+    rating?: string
 
-  @Field(type => [Picture])
-    pictures!: Picture[]
+  @Field(type => [Picture], { nullable: true })
+    pictures?: Picture[]
 
-  @Field()
-    background!: string
+  @Field({ nullable: true })
+    background?: string
 
-  @Field(type => [RelatedAnime])
-    related_anime!: RelatedAnime[]
+  @Field(type => [RelatedAnime], { nullable: true })
+    related_anime?: RelatedAnime[]
 
-  // @Field()
-  // related_manga!: any[];
+  @Field(type => [Recommendation], { nullable: true })
+    recommendations?: Recommendation[]
 
-  @Field(type => [Recommendation])
-    recommendations!: Recommendation[]
-
-  @Field(type => [Genre])
-    studios!: Genre[]
+  @Field(type => [Genre], { nullable: true })
+    studios?: Genre[]
 
   @Field(type => Statistics)
-    statistics!: Statistics
+    statistics?: Statistics
 }
 
 interface Datum {
